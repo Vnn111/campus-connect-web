@@ -41,6 +41,23 @@ export const processSteps = [
   { title: 'Follow the Guidance', description: 'Follow outdoor AR guidance and, when supported, continue to the configured indoor destination.' },
 ]
 
+export const demoVideo = {
+  demoVideoAvailable: true,
+  demoVideoUrl: 'https://www.youtube-nocookie.com/embed/2ct2joh2IuA',
+} as const
+
+export const demonstratedFeatures = [
+  'User Authentication',
+  'Plan a Route',
+  'Route QR Generation',
+  'Outdoor AR Navigation',
+  'Outdoor-to-Indoor Transition',
+  'Indoor AR Navigation',
+  'Building Information',
+  'Virtual Guide',
+  'Destination Arrival',
+] as const
+
 // Change this one filename to 'Outdoor Navigation.jpg' when a clean release
 // screenshot is ready for the hero.
 export const heroScreenshotFile = 'UserHomeScreen.jpg'

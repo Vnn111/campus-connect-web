@@ -5,6 +5,8 @@ import { Header } from './components/Header'
 import { Icon } from './components/Icon'
 import { appInfo } from './data/appInfo'
 import {
+  demoVideo,
+  demonstratedFeatures,
   faqs,
   features,
   installationSteps,
@@ -199,6 +201,49 @@ function ScreenshotGallery() {
   )
 }
 
+function VideoDemo() {
+  return (
+    <section className="section demo-section" id="demo" aria-labelledby="demo-title">
+      <div className="shell demo-shell">
+        <div className="demo-heading">
+          <p className="section-eyebrow">Campus Connect Demo</p>
+          <div className="section-heading">
+            <h2 id="demo-title">See Campus Connect in Action</h2>
+            <p>Watch the complete user-side demonstration of Campus Connect, including route planning, QR support, outdoor and indoor AR navigation, Building Information, and Virtual Guide.</p>
+          </div>
+        </div>
+
+        {demoVideo.demoVideoAvailable ? (
+          <div className="demo-player">
+            <iframe
+              src={demoVideo.demoVideoUrl}
+              title="Campus Connect complete user-side application demonstration"
+              loading="lazy"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+        ) : (
+          <div className="demo-placeholder" role="status">
+            <strong>Video demo coming soon</strong>
+            <p>The complete Campus Connect demonstration will be available here.</p>
+          </div>
+        )}
+
+        <div className="demo-features" aria-labelledby="demo-features-title">
+          <h3 id="demo-features-title">Demonstrated Features</h3>
+          <ul>
+            {demonstratedFeatures.map((feature) => (
+              <li key={feature}><Icon name="check" /><span>{feature}</span></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function Requirements() {
   return (
     <section className="section requirements-section" id="requirements" aria-labelledby="requirements-title">
@@ -377,6 +422,7 @@ export default function App() {
         <HowItWorks />
         <NavigationModes />
         <ScreenshotGallery />
+        <VideoDemo />
         <Requirements />
         <Download />
         <Guidance />

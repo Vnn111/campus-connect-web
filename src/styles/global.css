@@ -170,6 +170,22 @@ ul, ol { list-style: none; }
 .screenshot-title span { flex: 0 0 auto; color: var(--blue-dark); font-size: .62rem; }
 .screenshot-caption { margin-top: .4rem; color: var(--muted); font-size: .73rem; line-height: 1.55; }
 
+/* Video demo */
+.demo-section { border-bottom: 1px solid var(--border); }
+.demo-shell { max-width: 66rem; }
+.section-eyebrow { margin-bottom: .75rem; color: var(--blue-dark); font-size: .72rem; font-weight: 700; }
+.demo-heading .section-heading { max-width: 51rem; }
+.demo-player { width: 100%; aspect-ratio: 16 / 9; margin-top: 2.5rem; overflow: hidden; background: #0b1220; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); }
+.demo-player iframe { width: 100%; height: 100%; display: block; border: 0; }
+.demo-placeholder { margin-top: 2.5rem; padding: 3rem 1.5rem; text-align: center; background: var(--surface); border-block: 1px solid var(--border); }
+.demo-placeholder strong { font-size: 1rem; }
+.demo-placeholder p { margin-top: .5rem; color: var(--muted); font-size: .85rem; }
+.demo-features { margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+.demo-features h3 { color: var(--blue-dark); font-size: .78rem; }
+.demo-features ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .65rem 2rem; margin-top: 1rem; }
+.demo-features li { display: flex; align-items: flex-start; gap: .55rem; color: #475467; font-size: .8rem; line-height: 1.5; }
+.demo-features li svg { width: .9rem; flex: 0 0 auto; margin-top: .12rem; color: var(--blue); }
+
 /* Requirements */
 .requirements-grid { display: grid; grid-template-columns: 1fr 1fr; margin-top: 3rem; border-block: 1px solid var(--border-strong); }
 .requirement-card { padding: 2rem 3rem 2rem 0; }
@@ -305,6 +321,7 @@ ul, ol { list-style: none; }
   .process-list li:nth-child(3) { padding-left: 0; border-left: 0; border-top: 1px solid var(--border); }
   .process-list li:nth-child(4) { border-top: 1px solid var(--border); }
   .screenshot-scroll { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .demo-features ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .download-shell, .install-grid { grid-template-columns: 1fr; }
   .release-panel { padding: 2rem 0 0; border-top: 1px solid var(--border-strong); border-left: 0; }
   .install-intro { position: static; }
@@ -340,6 +357,8 @@ ul, ol { list-style: none; }
   .screenshot-scroll { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(11rem, 68vw); justify-content: start; gap: 1rem; padding: .2rem 0 .35rem; overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: inline mandatory; scrollbar-width: none; -ms-overflow-style: none; }
   .screenshot-scroll::-webkit-scrollbar { display: none; }
   .screenshot-item { max-width: none; justify-self: auto; scroll-snap-align: start; }
+  .demo-player { margin-top: 2rem; }
+  .demo-features ul { grid-template-columns: 1fr; gap: .55rem; }
   .requirements-grid { grid-template-columns: 1fr; }
   .requirement-card, .requirement-card + .requirement-card { padding: 1.75rem 0; border-left: 0; }
   .requirement-card + .requirement-card { border-top: 1px solid var(--border); }
