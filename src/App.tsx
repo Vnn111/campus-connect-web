@@ -59,7 +59,7 @@ function Hero() {
           <p className="hero-description">AR-powered campus navigation designed to help users find selected buildings, rooms, offices, facilities, and other destinations within Bulacan State University – Sarmiento Campus.</p>
           <div className="hero-actions">
             <a className="button button-primary" href="#features">Explore Features <Icon name="route" /></a>
-            <a className="button button-secondary" href="#download">APK Coming Soon <Icon name="arrowDown" /></a>
+            <a className="button button-secondary" href="#download">{appInfo.releaseAvailable ? 'Download APK' : 'APK Coming Soon'} <Icon name="arrowDown" /></a>
           </div>
           <p className="hero-note"><Icon name="info" /> Designed for Android 10+ on compatible ARCore devices.</p>
         </div>
@@ -281,10 +281,10 @@ function Download() {
     <section className="section download-section" id="download" aria-labelledby="download-title">
       <div className="shell download-shell">
         <div className="download-copy">
-          <p className="availability"><span aria-hidden="true" /> Pre-release mode</p>
+          <p className="availability"><span aria-hidden="true" /> {appInfo.releaseAvailable ? 'Official release available' : 'Pre-release mode'}</p>
           <h2 id="download-title">Download Campus Connect</h2>
-          <p className="download-status">Android APK — Coming Soon</p>
-          <p>The official APK download will be enabled here once the final release build is ready.</p>
+          <p className="download-status">{appInfo.releaseAvailable ? `Android APK — v${appInfo.version}` : 'Android APK — Coming Soon'}</p>
+          <p>{appInfo.releaseAvailable ? 'Download the official Campus Connect APK directly from the project’s GitHub release.' : 'The official APK download will be enabled here once the final release build is ready.'}</p>
           {appInfo.releaseAvailable && appInfo.apkUrl ? (
             <a className="button button-light" href={appInfo.apkUrl} download>Download APK <Icon name="download" /></a>
           ) : (
@@ -299,7 +299,7 @@ function Download() {
           <div className="qr-placeholder">
             {appInfo.releaseAvailable && appInfo.downloadQrUrl ? (
               <img src={appInfo.downloadQrUrl} alt="QR code for the official Campus Connect APK download" width="160" height="160" />
-            ) : <><Icon name="qr" /><p>Download QR Code will be available when the official release link is published.</p></>}
+            ) : <><Icon name="qr" /><p>{appInfo.releaseAvailable ? 'Download QR Code will be added soon. Use the Download APK button to get the official release.' : 'Download QR Code will be available when the official release link is published.'}</p></>}
           </div>
           {appInfo.releaseAvailable && appInfo.sha256 && <p className="checksum"><strong>SHA-256</strong><code>{appInfo.sha256}</code></p>}
         </div>
